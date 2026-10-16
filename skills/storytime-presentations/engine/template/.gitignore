@@ -1,0 +1,7 @@
+node_modules/
+.cache/
+renders/
+dist/
+*.pptx
+*.pdf
+check-report.md

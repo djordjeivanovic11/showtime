@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bus Bunching Diorama</title>
+<style>
+  @font-face { font-family: "Fraunces"; font-weight: 600; src: url("fonts/fraunces-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Fraunces"; font-weight: 800; src: url("fonts/fraunces-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Fraunces"; font-weight: 900; src: url("fonts/fraunces-latin-900-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Andika"; font-weight: 400; src: url("fonts/andika-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Andika"; font-weight: 700; src: url("fonts/andika-latin-700-normal.woff2") format("woff2"); }
+  /* Andika's Latin subset has no Greek; Gentium (its SIL sibling) supplies the Sigma. */
+  @font-face { font-family: "Gentium Greek"; font-weight: 400; src: url("fonts/gentium-plus-greek-400-normal.woff2") format("woff2"); unicode-range: U+0370-03FF; }
+  @font-face { font-family: "Gentium Greek"; font-weight: 700; src: url("fonts/gentium-plus-greek-700-normal.woff2") format("woff2"); unicode-range: U+0370-03FF; }
+
+  :root { --letterbox: #1d1610; --ink: #2B2622; --cream: #FFF8EA; }
+  html, body { margin: 0; height: 100%; background: var(--letterbox); overflow: hidden; }
+  body { display: grid; place-items: center; font-family: "Andika", sans-serif; }
+  #stage {
+    position: absolute; left: 50%; top: 50%;
+    width: 1920px; height: 1080px;
+    transform-origin: 0 0;
+    overflow: hidden;
+    background: #F6E7CB;
+  }
+  #stage > svg.layer {
+    position: absolute; left: 0; top: 0;
+    width: 1920px; height: 1080px;
+    overflow: visible;
+    will-change: transform;
+  }
+  #notes {
+    position: absolute; left: 50%; bottom: 3vh; transform: translateX(-50%);
+    width: min(1100px, 92vw); box-sizing: border-box;
+    padding: 18px 24px; border-radius: 10px;
+    background: rgba(29, 22, 16, 0.92); color: var(--cream);
+    font: 400 22px/1.45 "Andika", sans-serif;
+    display: none; z-index: 10;
+  }
+  #notes b { color: #F2AE45; font-weight: 700; }
+  body.show-notes #notes { display: block; }
+  #toast {
+    position: absolute; right: 2vw; top: 2vh; z-index: 11;
+    padding: 8px 14px; border-radius: 8px;
+    background: rgba(29, 22, 16, 0.9); color: var(--cream);
+    font: 700 16px "Andika", sans-serif; opacity: 0; transition: opacity .3s;
+  }
+</style>
+</head>
+<body>
+  <div id="stage" aria-label="Paper diorama presentation: why do buses come in bunches?"></div>
+  <div id="notes" aria-live="polite"></div>
+  <div id="toast"></div>
+  <script src="kit.js"></script>
+  <script src="deck.js"></script>
+</body>
+</html>

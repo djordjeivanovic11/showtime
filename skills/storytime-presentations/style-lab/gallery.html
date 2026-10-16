@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storytime worlds · style lab</title>
+<style>
+  :root { color-scheme: dark; font-family: system-ui, -apple-system, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0f1420; color: #f2f3ee; }
+  main { max-width: 1260px; margin: auto; padding: 56px 24px 90px; }
+  header { max-width: 900px; margin-bottom: 42px; }
+  .eyebrow { color: #9fe4ca; font-size: .86rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  h1 { font-size: clamp(2.4rem, 5vw, 5rem); line-height: 1.03; letter-spacing: -.055em; margin: 12px 0 18px; }
+  p { color: #c3cbd2; line-height: 1.6; }
+  header p { font-size: 1.18rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 470px), 1fr)); gap: 22px; }
+  article { background: #1b2430; border: 1px solid #344353; border-radius: 18px; overflow: hidden; }
+  article img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; background: #10151b; }
+  .info { padding: 24px; }
+  h2 { margin: 0 0 6px; font-size: 1.6rem; letter-spacing: -.03em; }
+  .room { color: #a7f2d6; font-weight: 650; margin: 0 0 8px; }
+  .info p:not(.room) { min-height: 3em; margin: 0 0 18px; }
+  a { color: #b4f7df; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a { display: inline-block; border: 1px solid #698a80; border-radius: 8px; padding: 9px 12px; text-decoration: none; font-weight: 650; }
+  .links a:hover, .links a:focus-visible { background: #2d5149; outline: 2px solid #a7f2d6; }
+  footer { margin-top: 40px; font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">One story · seven visual worlds</div>
+    <h1>Which world makes the idea click?</h1>
+    <p>Every demo explains the same illustrative bus-bunching problem with the
+    same numbers and narration. The art direction changes; the evidence does
+    not. Open a demo, advance with the arrow keys, press N for notes and M for
+    reduced motion.</p>
+  </header>
+  <div class="grid">
+    <article><img alt="Five states in a layered paper diorama with a loop road and character" src="candidates/paper-diorama/renders/state-04.png"><div class="info"><h2>Paper Diorama</h2><p class="room">Public talks · education</p><p>A warm, tactile model makes buses, delays, and waiting people easy to follow.</p><div class="links"><a href="candidates/paper-diorama/index.html">Play demo</a><a href="candidates/paper-diorama/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five states in a restrained transit operations control room" src="candidates/signal-line/renders/state-04.png"><div class="info"><h2>Signal Line</h2><p class="room">Business · operations</p><p>The route and gap gauge become a precise boardroom explanation.</p><div class="links"><a href="candidates/signal-line/index.html">Play demo</a><a href="candidates/signal-line/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five states drawn as an illustrated newspaper and street scene" src="candidates/editorial-ink/renders/state-04.png"><div class="info"><h2>Editorial Ink</h2><p class="room">Policy · evidence stories</p><p>Human consequences and documentary-style labels carry the argument together.</p><div class="links"><a href="candidates/editorial-ink/index.html">Play demo</a><a href="candidates/editorial-ink/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five states drawn like a blue technical route plan" src="candidates/blueprint-atlas/renders/state-04.png"><div class="info"><h2>Blueprint Atlas</h2><p class="room">Research · engineering</p><p>A technical plan keeps the mechanism and its measurements in the same frame.</p><div class="links"><a href="candidates/blueprint-atlas/index.html">Play demo</a><a href="candidates/blueprint-atlas/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five mathematical drafting-table states where bus gaps become waiting-time triangles" src="candidates/math-workbench/renders/state-04.png"><div class="info"><h2>Living Proof</h2><p class="room">Math · technical teaching</p><p>The changing bus gaps become geometric areas before the wait-time equation appears.</p><div class="links"><a href="candidates/math-workbench/index.html">Play demo</a><a href="candidates/math-workbench/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five cinematic night scenes with buses, riders, and a large wait-time reveal" src="candidates/cinema/renders/state-04.png"><div class="info"><h2>Cinema</h2><p class="room">Keynotes · large stages</p><p>A night-time city creates scale and gives the final number a dramatic entrance.</p><div class="links"><a href="candidates/cinema/index.html">Play demo</a><a href="candidates/cinema/DESIGN.md">Read design notes</a></div></div></article>
+    <article><img alt="Five pixel-art quest states explaining the bus loop" src="candidates/pixel-quest/renders/state-04.png"><div class="info"><h2>Pixel Quest</h2><p class="room">Playful teaching · research</p><p>The original style: an expressive guide moves through a game-like system.</p><div class="links"><a href="candidates/pixel-quest/index.html">Play demo</a><a href="candidates/pixel-quest/DESIGN.md">Read design notes</a></div></div></article>
+  </div>
+  <footer><p>These are HTML prototypes. The numbers are illustrative. A PowerPoint export requires adapting a style kit to the separate <a href="../engine/README.md">Storytime engine</a>.</p></footer>
+</main>
+</body>
+</html>

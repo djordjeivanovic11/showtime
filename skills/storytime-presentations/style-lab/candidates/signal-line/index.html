@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal Line</title>
+<style>
+  @font-face { font-family: 'Inter'; font-weight: 400; src: url(fonts/inter-latin-400-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 500; src: url(fonts/inter-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url(fonts/inter-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 700; src: url(fonts/inter-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 800; src: url(fonts/inter-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400; src: url(fonts/inter-greek-400-normal.woff2) format('woff2'); unicode-range: U+0370-03FF; }
+  @font-face { font-family: 'Inter'; font-weight: 500; src: url(fonts/inter-greek-500-normal.woff2) format('woff2'); unicode-range: U+0370-03FF; }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url(fonts/inter-greek-600-normal.woff2) format('woff2'); unicode-range: U+0370-03FF; }
+  @font-face { font-family: 'Inter'; font-weight: 700; src: url(fonts/inter-greek-700-normal.woff2) format('woff2'); unicode-range: U+0370-03FF; }
+  @font-face { font-family: 'Inter'; font-weight: 800; src: url(fonts/inter-greek-800-normal.woff2) format('woff2'); unicode-range: U+0370-03FF; }
+
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #07090b; }
+  #stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; }
+  #deck { display: block; width: 1920px; height: 1080px; }
+  .sl-notes {
+    position: absolute; left: 56px; right: 56px; bottom: 96px; padding: 28px 36px;
+    background: rgba(12, 17, 21, 0.94); border: 2px solid #4c555d; border-radius: 10px;
+    color: #f2ede3; font: 500 30px/1.45 Inter, 'Helvetica Neue', Arial, sans-serif;
+    display: none;
+  }
+  .sl-notes.on { display: block; }
+  .sl-notes-label { font-size: 20px; font-weight: 700; letter-spacing: 3px; color: #b3bdc6; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="deck" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Why do buses come in bunches?"></svg>
+</div>
+<script src="kit.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>

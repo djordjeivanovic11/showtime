@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bus Bunching Plate</title>
+<style>
+  @font-face { font-family: "Barlow Condensed"; font-weight: 600; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Barlow Condensed"; font-weight: 700; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); }
+  /* Plate Mono = JetBrains Mono, Latin + Greek (for the Σ in formulas). */
+  @font-face { font-family: "Plate Mono"; font-weight: 400; src: url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2212; }
+  @font-face { font-family: "Plate Mono"; font-weight: 700; src: url(fonts/jetbrains-mono-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2212; }
+  @font-face { font-family: "Plate Mono"; font-weight: 400; src: url(fonts/jetbrains-mono-greek-400-normal.woff2) format("woff2"); unicode-range: U+0370-03FF; }
+  @font-face { font-family: "Plate Mono"; font-weight: 700; src: url(fonts/jetbrains-mono-greek-700-normal.woff2) format("woff2"); unicode-range: U+0370-03FF; }
+
+  :root {
+    --ground: #0f3b6e; --ground-deep: #0a2b54; --ink: #eef5ff; --ink-soft: #a3c6ea;
+    --data: #ffd166; --alarm: #ff8f80; --fix: #8ef0c6;
+  }
+  html, body { margin: 0; height: 100%; background: #050d18; overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; background: var(--ground); }
+  #sheet { display: block; width: 1920px; height: 1080px; }
+  text { font-kerning: normal; }
+  .bp-title { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 128px; fill: var(--ink); letter-spacing: 0.005em; }
+  .bp-giant { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 220px; }
+  .bp-unit { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 96px; }
+  .bp-tag { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 52px; fill: var(--ink); letter-spacing: 0.01em; }
+  .bp-label { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 30px; fill: var(--ink); letter-spacing: 0.07em; }
+  .bp-num { font-family: "Plate Mono", monospace; font-weight: 700; }
+  .bp-small { font-family: "Plate Mono", monospace; font-weight: 400; font-size: 21px; fill: var(--ink-soft); letter-spacing: 0.02em; }
+  .bp-stamp { font-family: "Plate Mono", monospace; font-weight: 700; font-size: 27px; fill: var(--ink); letter-spacing: 0.2em; }
+  .halo { paint-order: stroke; stroke: var(--ground); stroke-width: 9px; stroke-linejoin: round; }
+  .halo-deep { paint-order: stroke; stroke: var(--ground-deep); stroke-width: 12px; stroke-linejoin: round; }
+  .bp-eyes { animation: bp-blink 5.4s infinite 2s; transform-box: fill-box; transform-origin: center; }
+  @keyframes bp-blink { 0%, 94%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.12); } }
+  body.reduced .bp-eyes { animation: none; }
+  #notes { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 36px 26px; background: rgba(5, 18, 36, 0.94);
+    border-top: 2px solid var(--ink); color: var(--ink); font: 400 26px/1.45 "Plate Mono", monospace; display: none; z-index: 5; }
+  #notes.open { display: block; }
+  #notes small { display: block; color: var(--ink-soft); font-size: 18px; margin-bottom: 6px; letter-spacing: 0.08em; }
+  #notes p { margin: 0; max-width: 1700px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="sheet" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Why do buses come in bunches? Blueprint plate."></svg>
+  <div id="notes"><small>SPEAKER NOTES · <span id="notes-count"></span> · N to hide · M reduced motion</small><p></p></div>
+</div>
+<script src="kit.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>

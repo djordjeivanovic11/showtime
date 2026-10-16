@@ -1,0 +1,24 @@
+{
+  "name": "storytime-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Player, lint, renderer, and PPTX/PDF/HTML exporters for storytime decks.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "render": "node tools/render.mjs",
+    "pptx": "node tools/export-pptx.mjs",
+    "pdf": "node tools/export-pdf.mjs",
+    "bundle": "node tools/bundle.mjs",
+    "verify": "node tools/verify-pptx.mjs",
+    "build": "node tools/build.mjs",
+    "smoke": "node tools/build.mjs examples/smoke"
+  },
+  "dependencies": {
+    "jszip": "3.10.1",
+    "pdf-lib": "1.17.1",
+    "playwright": "1.48.2",
+    "pptxgenjs": "3.12.0"
+  }
+}
