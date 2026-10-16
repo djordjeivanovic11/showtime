@@ -1,0 +1,23 @@
+{
+  "name": "showtime",
+  "interface": {
+    "displayName": "Showtime"
+  },
+  "plugins": [
+    {
+      "name": "storytime-presentations",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Storytime Presentations"
+      }
+    }
+  ]
+}

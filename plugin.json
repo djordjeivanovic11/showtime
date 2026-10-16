@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "storytime-presentations",
+  "version": "0.2.0",
+  "description": "Turn source material into a clear, illustrated presentation with audience-fit visuals, natural speaker notes, and verified slide exports.",
+  "author": {
+    "name": "Djordje Ivanovic"
+  },
+  "repository": "https://github.com/djordjeivanovic11/showtime",
+  "license": "CC-BY-4.0",
+  "keywords": ["presentations", "visual storytelling", "slides"]
+}

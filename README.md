@@ -1,8 +1,8 @@
-# Showtime: Storytime Presentations for Claude
+# Showtime: Storytime Presentations for Claude and Codex
 
-Turn a paper, lesson, project, or business decision into a **visual story people can follow**. Showtime is a Claude plugin built around one reusable skill: understand the audience, find the argument, make the difficult idea visible, write notes a presenter can actually say, and inspect the final slides.
+Turn a paper, lesson, project, or business decision into a **visual story people can follow**. Showtime packages one reusable skill for Claude and Codex: understand the audience, find the argument, make the difficult idea visible, write notes a presenter can actually say, and inspect the final slides.
 
-It can produce a first deck from one request. “One shot” still includes Claude's own storyboarding, rendering, review, and repair; it is not a guarantee that every deck will need no human revision.
+It can produce a first deck from one request. “One shot” still includes the agent's own storyboarding, rendering, review, and repair; it is not a guarantee that every deck will need no human revision.
 
 The seven visual worlds below are original examples, not rigid templates. You can choose one, provide your own brand, or ask Claude to develop another direction.
 
@@ -22,7 +22,18 @@ cd showtime
 claude --plugin-dir .
 ```
 
-In Claude, invoke `/storytime-presentations:storytime-presentations`, or simply ask for a visual presentation. You can also pass the path to a packaged plugin ZIP to `--plugin-dir`.
+In Claude, invoke `/storytime-presentations:storytime-presentations`, or simply ask for a visual presentation. You can also pass the path to a packaged plugin ZIP to `--plugin-dir`. The flag loads the plugin for that session.
+
+### Codex
+
+Add this repository as a Codex plugin marketplace, then install Showtime:
+
+```bash
+codex plugin marketplace add djordjeivanovic11/showtime --ref main
+codex plugin add storytime-presentations@showtime
+```
+
+Start a new Codex chat and ask for a visual presentation, or invoke `$storytime-presentations` explicitly. The same `SKILL.md`, references, visual examples, and export engine are included. To use Showtime as a standalone Codex skill instead of a plugin, ask Codex's `$skill-installer` to install `skills/storytime-presentations` from `djordjeivanovic11/showtime`.
 
 ### Claude.ai or Cowork
 
@@ -68,9 +79,9 @@ The complete instructions are in [`SKILL.md`](skills/storytime-presentations/SKI
 
 ## Formats and requirements
 
-The skill can guide whatever slide format Claude's available tools support. This repository also includes an [optional export engine](skills/storytime-presentations/engine/README.md) that builds a layered PowerPoint, PDF, presenter notes, and a single-file offline HTML talk from one `Storytime.deck` source. The engine requires **Node.js 20+**, its pinned npm dependencies, and **Playwright Chromium**. It does not create native Google Slides.
+The skill can guide whatever slide format the host's available tools support. This repository also includes an [optional export engine](skills/storytime-presentations/engine/README.md) that builds a layered PowerPoint, PDF, presenter notes, and a single-file offline HTML talk from one `Storytime.deck` source. The engine requires **Node.js 20+**, its pinned npm dependencies, and **Playwright Chromium**. It does not create native Google Slides.
 
-The included engine examples built and passed automated rendering and export checks locally on macOS. The plugin itself loaded and passed strict validation in the Claude Code CLI. **A full deck has not yet been generated through a Claude session with this plugin**, and live PowerPoint Morph motion has not been observed in a slide show. Claude.ai and Cowork behavior has not been tested. Treat the examples as evidence of the tooling, not a promise that a new deck will export or present perfectly without inspection.
+The included engine examples built and passed automated rendering and export checks locally on macOS. The Claude plugin loaded and passed strict validation; the Codex skill passed its validator. **A full deck has not yet been generated through a Claude or Codex session with this public package**, and live PowerPoint Morph motion has not been observed in a slide show. Claude.ai and Cowork behavior has not been tested. Treat the examples as evidence of the tooling, not a promise that a new deck will export or present perfectly without inspection.
 
 PowerPoint text is picture-based by default to preserve appearance. The optional native-text mode requires the fonts on the presentation machine and manual layout review. Always reopen the final file in the application where you will present it.
 
